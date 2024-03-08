@@ -152,3 +152,10 @@ class DeadLetterQueue:
         Clear the whole queue.
         """
         await self.backend.clear()
+
+
+    async def retrieve(self):
+        """
+        Retrieves stored events that have not been processed. Returns the potentially blocking events first.
+        """
+        

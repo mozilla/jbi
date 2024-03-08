@@ -1505,6 +1505,17 @@ files = [
 ]
 
 [[package]]
+name = "schedule"
+version = "1.2.1"
+description = "Job scheduling for humans."
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "schedule-1.2.1-py2.py3-none-any.whl", hash = "sha256:14cdeb083a596aa1de6dc77639a1b2ac8bf6eaafa82b1c9279d3612823063d01"},
+    {file = "schedule-1.2.1.tar.gz", hash = "sha256:843bc0538b99c93f02b8b50e3e39886c06f2d003b24f48e1aa4cadfa3f341279"},
+]
+
+[[package]]
 name = "sentry-sdk"
 version = "1.41.0"
 description = "Python client for Sentry (https://sentry.io)"
@@ -2054,4 +2065,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.12, <3.13"
-content-hash = "c3edce3a18801a29f5a58279f1b552a3064f065834371fa268c8b022c245afb0"
+content-hash = "0a06c25b6b8c53cf53cca4d0bad3cf9064ab87d7fac7d3a2172a2a682ccf04ea"

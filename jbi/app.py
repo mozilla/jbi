@@ -26,6 +26,7 @@ from jbi.configuration import ACTIONS
 from jbi.environment import get_settings
 from jbi.log import CONFIG
 from jbi.router import router
+from jbi.retry import retry_failed
 
 SRC_DIR = Path(__file__).parent
 APP_DIR = Path(__file__).parents[1]
@@ -89,6 +90,8 @@ async def lifespan(app: FastAPI) -> AsyncGenerator[None, None]:
         name="jira.all_project_issue_types_exist",
     )
     checks.register(jira_service.check_jira_pandoc_install, name="jira.pandoc_install")
+
+    setup_retry_schedule()
 
     yield
 
