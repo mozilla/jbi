@@ -59,7 +59,7 @@ def mocked_statsd():
 @pytest_asyncio.fixture(autouse=True)
 async def purge_dl_queue():
     q = get_dl_queue()
-    await q.clear()
+    await q.backend.clear()
 
 
 register(factories.ActionContextFactory)
@@ -74,6 +74,7 @@ register(factories.WebhookEventFactory)
 register(factories.WebhookEventChangeFactory)
 register(factories.WebhookRequestFactory, "bugzilla_webhook_request")
 register(factories.WebhookUserFactory)
+register(factories.QueueItemFactory)
 
 
 register(
