@@ -69,7 +69,7 @@ docker-shell: $(DOTENV_FILE)
 
 .PHONY: docker-start
 docker-start: $(DOTENV_FILE)
-	docker-compose up
+	docker compose up
 
 .PHONY: test
 test: $(INSTALL_STAMP)

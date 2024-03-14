@@ -91,8 +91,6 @@ async def lifespan(app: FastAPI) -> AsyncGenerator[None, None]:
     )
     checks.register(jira_service.check_jira_pandoc_install, name="jira.pandoc_install")
 
-    setup_retry_schedule()
-
     yield
 
 
