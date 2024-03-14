@@ -1,7 +1,4 @@
 
-import os
-from unittest.mock import MagicMock, call
-import pytest
 from jbi.retry import retry_failed
 
 # def test_setup_retry_schedule():

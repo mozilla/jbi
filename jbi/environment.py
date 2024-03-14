@@ -42,6 +42,7 @@ class Settings(BaseSettings):
 
     # Retry logic
     constant_retry: str = "false"
+    RETRY_TIMEOUT: int = 7
 
     # Logging
     log_level: str = "info"

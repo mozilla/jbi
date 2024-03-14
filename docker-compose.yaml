@@ -14,7 +14,7 @@ services:
       - .:/app
   retry:
     build: .
-    command: python -m jbi/retry
+    command: python -m jbi.retry
     env_file:
       - .env
     volumes:

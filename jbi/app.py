@@ -26,7 +26,6 @@ from jbi.configuration import ACTIONS
 from jbi.environment import get_settings
 from jbi.log import CONFIG
 from jbi.router import router
-from jbi.retry import retry_failed
 
 SRC_DIR = Path(__file__).parent
 APP_DIR = Path(__file__).parents[1]
