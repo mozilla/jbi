@@ -36,15 +36,13 @@ async def retry_failed():
       logger.info("skipping event %d - previous items have failed", item.identifier)
       continue
 
-    # try:
-    print(runner.execute_action)
-    runner.execute_action(item.payload, ACTIONS)
-    await queue.done(item)
-    # except Exception as ex:
-    #   print(ex)
-    #   # write well formed log that could be alerted on
-    #   failed_bugs[bug.id] = True
-    #   logger.error(ex)
+    try:
+      runner.execute_action(item.payload, ACTIONS)
+      await queue.done(item)
+    except Exception as ex:
+      # write well formed log that could be alerted on
+      failed_bugs[bug.id] = True
+      logger.error("failed to reprocess event %d. error: %d", item.identifier, ex)
 
 
 async def main():
