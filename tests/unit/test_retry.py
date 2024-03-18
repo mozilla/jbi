@@ -62,11 +62,11 @@ async def test_retry_success(logger, execute_action):
 
     await retry_failed()
     queue.retrieve.assert_called_once()
-    queue.done.assert_called_once()
-    logger.info.assert_not_called()
+    queue.done.assert_called_once() # item should be marked as complete
+    logger.info.assert_not_called() # no items should have been skipped or failed
     logger.warn.assert_not_called()
     logger.error.assert_not_called()
-    execute_action.assert_called_once()
+    execute_action.assert_called_once() # item should have been processed
 
 
 @pytest.mark.asyncio
